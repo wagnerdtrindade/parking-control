@@ -1,27 +1,27 @@
-package com.api.parkingcontrol.dtos;
+package com.api.parkingcontrol.application.domain;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import java.time.LocalDateTime;
+import java.util.UUID;
 
-public class ParkingSpotDto {
-
-    @NotBlank
+public class ParkingSpot {
+    private UUID id;
     private String parkingSpotNumber;
-    @NotBlank
-    @Size(max = 7)
     private String licensePlateCar;
-    @NotBlank
     private String brandCar;
-    @NotBlank
     private String modelCar;
-    @NotBlank
     private String colorCar;
-    @NotBlank
+    private LocalDateTime registrationDate;
     private String responsibleName;
-    @NotBlank
     private String apartment;
-    @NotBlank
     private String block;
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
 
     public String getParkingSpotNumber() {
         return parkingSpotNumber;
@@ -85,5 +85,13 @@ public class ParkingSpotDto {
 
     public void setBlock(String block) {
         this.block = block;
+    }
+
+    public LocalDateTime getRegistrationDate() {
+        return registrationDate;
+    }
+
+    public void setRegistrationDate(LocalDateTime registrationDate) {
+        this.registrationDate = registrationDate;
     }
 }

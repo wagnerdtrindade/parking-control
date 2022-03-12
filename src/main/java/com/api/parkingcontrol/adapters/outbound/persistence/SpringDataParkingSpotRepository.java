@@ -1,13 +1,13 @@
-package com.api.parkingcontrol.repositories;
+package com.api.parkingcontrol.adapters.outbound.persistence;
 
-import com.api.parkingcontrol.models.ParkingSpotModel;
+import com.api.parkingcontrol.adapters.outbound.persistence.entities.ParkingSpotEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
 
 @Repository
-public interface ParkingSpotRepository extends JpaRepository<ParkingSpotModel, UUID> {
+public interface SpringDataParkingSpotRepository extends JpaRepository<ParkingSpotEntity, UUID> {
 
     boolean existsByLicensePlateCar(String licensePlateCar);
     boolean existsByParkingSpotNumber(String parkingSpotNumber);
