@@ -53,21 +53,6 @@ public class ParkingSpotServiceAdapter implements ParkingSpotServicePort {
     }
 
     @Override
-    public boolean existsByLicensePlateCar(String licensePlateCar) {
-        return parkingSpotRepositoryPort.existsByLicensePlateCar(licensePlateCar);
-    }
-
-    @Override
-    public boolean existsByParkingSpotNumber(String parkingSpotNumber) {
-        return parkingSpotRepositoryPort.existsByParkingSpotNumber(parkingSpotNumber);
-    }
-
-    @Override
-    public boolean existsByApartmentAndBlock(String apartment, String block) {
-        return parkingSpotRepositoryPort.existsByApartmentAndBlock(apartment, block);
-    }
-
-    @Override
     public List<ParkingSpot> findAll(PageInfo pageInfo) {
         return parkingSpotRepositoryPort.findAll(pageInfo);
     }

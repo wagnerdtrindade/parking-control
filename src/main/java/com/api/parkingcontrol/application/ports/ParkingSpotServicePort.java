@@ -17,12 +17,6 @@ public interface ParkingSpotServicePort {
     @Transactional
     ParkingSpot update(ParkingSpot parkingSpot) throws NotFoundException;
 
-    boolean existsByLicensePlateCar(String licensePlateCar);
-
-    boolean existsByParkingSpotNumber(String parkingSpotNumber);
-
-    boolean existsByApartmentAndBlock(String apartment, String block);
-
     List<ParkingSpot> findAll(PageInfo pageInfo);
 
     ParkingSpot findById(UUID id) throws NotFoundException;
