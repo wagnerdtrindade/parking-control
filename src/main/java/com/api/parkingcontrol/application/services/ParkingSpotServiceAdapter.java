@@ -23,17 +23,8 @@ public class ParkingSpotServiceAdapter implements ParkingSpotServicePort {
 
     @Override
     @Transactional
-    public ParkingSpot save(ParkingSpot parkingSpot) throws ValidationException {
-
-        if (parkingSpotRepositoryPort.existsByLicensePlateCar(parkingSpot.getLicensePlateCar()))
-            throw new ValidationException("Conflict: License Plate Car is already in use!");
-        if (parkingSpotRepositoryPort.existsByParkingSpotNumber(parkingSpot.getParkingSpotNumber()))
-            throw new ValidationException("Conflict: Parking Spot is already in use!");
-        if (parkingSpotRepositoryPort.existsByApartmentAndBlock(parkingSpot.getApartment(), parkingSpot.getBlock()))
-            throw new ValidationException("Conflict: Parking Spot already registered for this apartment/block!");
-
+    public ParkingSpot save(ParkingSpot parkingSpot) {
         parkingSpot.setRegistrationDate(LocalDateTime.now(ZoneId.of("UTC")));
-
         return parkingSpotRepositoryPort.save(parkingSpot);
     }
 

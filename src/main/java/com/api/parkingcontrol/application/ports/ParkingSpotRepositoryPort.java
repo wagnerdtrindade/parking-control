@@ -9,12 +9,6 @@ import java.util.UUID;
 
 public interface ParkingSpotRepositoryPort {
 
-    boolean existsByLicensePlateCar(String licensePlateCar);
-
-    boolean existsByParkingSpotNumber(String parkingSpotNumber);
-
-    boolean existsByApartmentAndBlock(String apartment, String block);
-
     ParkingSpot save(ParkingSpot parkingSpot);
 
     List<ParkingSpot> findAll(PageInfo pageInfo);

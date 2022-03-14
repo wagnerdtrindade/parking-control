@@ -79,6 +79,8 @@ public class ParkingSpotController {
             return ResponseEntity.status(HttpStatus.OK).body(parkingSpotServicePort.update(parkingSpot));
         } catch (NotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        } catch (ValidationException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
         }
     }
 }
