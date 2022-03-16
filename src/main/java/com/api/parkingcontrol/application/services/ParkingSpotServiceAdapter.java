@@ -7,7 +7,6 @@ import com.api.parkingcontrol.application.ports.ParkingSpotRepositoryPort;
 import com.api.parkingcontrol.application.ports.ParkingSpotServicePort;
 
 import javax.transaction.Transactional;
-import javax.validation.ValidationException;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.List;
